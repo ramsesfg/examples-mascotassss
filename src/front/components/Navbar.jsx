@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
+import React from "react";
+import fonImageUrl from "../assets/img/Fondo-logo.png";
 
 export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-light bg-light">
-			<div className="container">
+			<div className="container-fluid">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+					<img src={fonImageUrl} alt="Logo" style={{ height: "40px" }} />
 				</Link>
 				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+					<Link to="/welcome">
+					<i class="fa-regular fa-user"></i>
+						
 					</Link>
 				</div>
 			</div>

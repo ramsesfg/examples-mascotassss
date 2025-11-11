@@ -1,0 +1,313 @@
+/* Si quieres aplicar el fondo a toda la página */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-image: url('/Fondo-logo.jpg'); /* ruta desde public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+
+/* Ajustes estéticos para la tarjeta */
+.card {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border: none;
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* Fondo global para toda la aplicación */
+.app-background {
+  min-height: 100vh;
+  background-image: url('/Fondo-logo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+}
+
+/* Limpia el body para que no interfiera */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajustes para que las tarjetas se vean bien sobre el fondo */
+.card {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border: none;
+  background: rgba(255,255,255,0.95); /* Un poco más opaco para mejor legibilidad */
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* ============================================
+   PALETA DE COLORES - PELUQUERÍA CANINA
+   Basada en el logo con mayor intensidad
+   ============================================ */
+
+:root {
+  /* Colores primarios más intensos */
+  --verde-principal: #B8E986;      /* Verde lima más vibrante */
+  --verde-claro: #D4F5A6;          /* Verde claro suave */
+  --verde-oscuro: #8FD14F;         /* Verde más oscuro para contraste */
+  
+  --rosa-principal: #FFB3D9;       /* Rosa más intenso */
+  --rosa-claro: #FFD4EC;           /* Rosa suave */
+  --rosa-oscuro: #FF8FCC;          /* Rosa fuerte */
+  
+  --crema-perrito: #FFDAB3;        /* Color del pelaje */
+  --marron-oscuro: #5C3A21;        /* Marrón del borde */
+  
+  /* Colores complementarios */
+  --blanco: #FFFFFF;
+  --gris-claro: #F5F5F5;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   ESTILOS GLOBALES
+   ============================================ */
+
+body {
+  background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-claro) 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   ENCABEZADOS
+   ============================================ */
+
+h1, .display-4 {
+  color: var(--marron-oscuro) !important;
+  text-shadow: 2px 2px 4px rgba(255, 179, 217, 0.3);
+  font-weight: bold;
+}
+
+h2, h3, h4, h5 {
+  color: var(--marron-oscuro) !important;
+}
+
+/* ============================================
+   TARJETAS (CARDS)
+   ============================================ */
+
+.card {
+  background-color: var(--blanco);
+  border: 3px solid var(--rosa-principal);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(255, 143, 204, 0.3);
+}
+
+.card-title {
+  color: var(--rosa-oscuro) !important;
+  font-weight: bold;
+}
+
+.card-body {
+  background-color: var(--gris-claro);
+  border-bottom-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+}
+
+.card-img-top {
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  border-bottom: 3px solid var(--rosa-principal);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--rosa-oscuro) 100%);
+  border: none;
+  color: var(--blanco);
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--rosa-oscuro) 0%, var(--rosa-principal) 100%);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 143, 204, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-principal) 100%);
+  border: none;
+  color: var(--marron-oscuro);
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-oscuro) 100%);
+  transform: scale(1.05);
+}
+
+/* ============================================
+   ALERTAS
+   ============================================ */
+
+.alert {
+  background-color: var(--blanco);
+  border: 3px solid var(--verde-oscuro);
+  border-radius: 15px;
+  color: var(--marron-oscuro);
+  box-shadow: 0 4px 8px var(--sombra);
+}
+
+.alert-info {
+  background: linear-gradient(135deg, var(--verde-claro) 0%, var(--blanco) 100%);
+  border-color: var(--verde-oscuro);
+}
+
+/* ============================================
+   IMÁGENES
+   ============================================ */
+
+.img-fluid {
+  border: 5px solid var(--rosa-principal);
+  box-shadow: 0 8px 16px rgba(255, 143, 204, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+.rounded-circle {
+  border: 5px solid var(--rosa-principal);
+  background-color: var(--blanco);
+  padding: 5px;
+}
+
+/* ============================================
+   CONTENEDORES
+   ============================================ */
+
+.container, .text-center {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(92, 58, 33, 0.15);
+}
+
+/* ============================================
+   CARD GROUP
+   ============================================ */
+
+.card-group {
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.card-group .card {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* ============================================
+   TEXTOS
+   ============================================ */
+
+.lead {
+  color: var(--marron-oscuro);
+  font-size: 1.1rem;
+}
+
+.text-body-secondary {
+  color: var(--rosa-oscuro) !important;
+}
+
+/* ============================================
+   DECORACIÓN CON HUELLAS
+   ============================================ */
+
+.paw-print::before {
+  content: "🐾";
+  margin-right: 10px;
+  color: var(--rosa-principal);
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ============================================
+   NAVBAR (si tienes una)
+   ============================================ */
+
+.navbar {
+  background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--rosa-oscuro) 100%);
+  box-shadow: 0 4px 8px var(--sombra);
+}
+
+.navbar-brand, .nav-link {
+  color: var(--blanco) !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: var(--verde-claro) !important;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-principal) 100%);
+  color: var(--marron-oscuro);
+  padding: 20px 0;
+  margin-top: 50px;
+  border-top: 5px solid var(--rosa-principal);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .card-group {
+    flex-direction: column;
+  }
+  
+  .container {
+    padding: 15px;
+  }
+}

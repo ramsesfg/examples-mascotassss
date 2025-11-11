@@ -1,10 +1,23 @@
 import React, { useEffect } from "react"
 import LadrarImageUrl from "../assets/img/Perrito.jpg";
+import LenguaImageUrl from "../assets/img/PerritoLengua.jpg";
+import BañitoImageUrl from "../assets/img/Ducha.jpg";
+import CachorroImageUrl from "../assets/img/Bulldog.jpg";
+import BlancoImageUrl from "../assets/img/English.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import { Carousel } from "../components/Carousel.jsx"; // Importa el carrusel
+import "../index.css";
 
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
+
+	// Imágenes para el carrusel
+	const carouselImages = [
+		CachorroImageUrl,
+		BañitoImageUrl,
+		BlancoImageUrl, // Puedes agregar más imágenes aquí
+	];
 
 	const loadMessage = async () => {
 		try {
@@ -34,10 +47,46 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="display-4">Peluqueria Canina</h1>
+			<h1 className="display-4">🐾 Peluquería Canina 🐾</h1>
+
+			{/* CARRUSEL AQUÍ */}
+			<div className="container my-4">
+				<Carousel images={carouselImages} interval={3000} autoPlay={true} />
+			</div>
+
 			<p className="lead">
 				<img src={LadrarImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" height={200} width={300} />
 			</p>
+
+			<div className="card-group">
+				<div className="card mx-2">
+					<img src={BañitoImageUrl} className="card-img-top" alt="..." height={200} width={300} />
+
+					<div className="card-body">
+						<h5 className="card-title">Baño y Corte</h5>
+						<p className="card-text">Servicio profesional de baño y corte personalizado para tu mascota.</p>
+						<p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+				<div className="card mx-2">
+					<img src={LadrarImageUrl} className="card-img-top" alt="..." />
+					<div className="card-body">
+						<h5 className="card-title">Spa Canino</h5>
+						<p className="card-text">Tratamientos especiales de relajación para tu perro.</p>
+						<p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+				<div className="card mx-2">
+					<img src={LenguaImageUrl} className="card-img-top" alt="..." />
+					<div className="card-body">
+						<h5 className="card-title">Aseo Completo</h5>
+						<p className="card-text">Servicio integral que incluye limpieza de oídos, corte de uñas y más.</p>
+						<p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+			</div>
+
+
 			<div className="alert alert-info">
 				{store.message ? (
 					<span>{store.message}</span>
@@ -49,4 +98,4 @@ export const Home = () => {
 			</div>
 		</div>
 	);
-}; 
+};
