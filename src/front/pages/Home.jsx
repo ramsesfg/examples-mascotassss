@@ -4,6 +4,7 @@ import LenguaImageUrl from "../assets/img/PerritoLengua.jpg";
 import BañitoImageUrl from "../assets/img/Ducha.jpg";
 import CachorroImageUrl from "../assets/img/Bulldog.jpg";
 import BlancoImageUrl from "../assets/img/English.jpg";
+import CaraImageUrl from "../assets/img/Seriedad.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Carousel } from "../components/Carousel.jsx"; // Importa el carrusel
 import "../index.css";
@@ -54,13 +55,9 @@ export const Home = () => {
 				<Carousel images={carouselImages} interval={3000} autoPlay={true} />
 			</div>
 
-			<p className="lead">
-				<img src={LadrarImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" height={200} width={300} />
-			</p>
-
 			<div className="card-group">
 				<div className="card mx-2">
-					<img src={BañitoImageUrl} className="card-img-top" alt="..." height={200} width={300} />
+					<img src={CaraImageUrl} className="card-img-top" alt="..."  />
 
 					<div className="card-body">
 						<h5 className="card-title">Baño y Corte</h5>
@@ -87,15 +84,7 @@ export const Home = () => {
 			</div>
 
 
-			<div className="alert alert-info">
-				{store.message ? (
-					<span>{store.message}</span>
-				) : (
-					<span className="text-danger">
-						Loading message from the backend (make sure your python 🐍 backend is running)...
-					</span>
-				)}
-			</div>
+		
 		</div>
 	);
 };
