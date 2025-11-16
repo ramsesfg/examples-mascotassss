@@ -48,7 +48,7 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="display-4">🐾 Peluquería Canina 🐾</h1>
+			<h1 className="display-4">🐾 Peluquería Canina ArisVet 🐾</h1>
 
 			{/* CARRUSEL AQUÍ */}
 			<div className="container my-4">

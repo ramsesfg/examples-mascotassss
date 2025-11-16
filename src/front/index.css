@@ -1,74 +1,22 @@
-/* Si quieres aplicar el fondo a toda la página */
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background-image: url('/Fondo-logo.jpg'); /* ruta desde public */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-}
-
-
-/* Ajustes estéticos para la tarjeta */
-.card {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  border: none;
-  background: rgba(255,255,255,0.9);
-  border-radius: 8px;
-  padding: 2rem;
-}
-
-/* Fondo global para toda la aplicación */
-.app-background {
-  min-height: 100vh;
-  background-image: url('/Fondo-logo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
-}
-
-/* Limpia el body para que no interfiera */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Ajustes para que las tarjetas se vean bien sobre el fondo */
-.card {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  border: none;
-  background: rgba(255,255,255,0.95); /* Un poco más opaco para mejor legibilidad */
-  border-radius: 8px;
-  padding: 2rem;
-}
-
 /* ============================================
-   PALETA DE COLORES - PELUQUERÍA CANINA
-   Basada en el logo con mayor intensidad
+   PALETA DE COLORES - VERDE MENTA Y BLANCO
+   Peluquería Canina
    ============================================ */
 
 :root {
-  /* Colores primarios más intensos */
-  --verde-principal: #B8E986;      /* Verde lima más vibrante */
-  --verde-claro: #D4F5A6;          /* Verde claro suave */
-  --verde-oscuro: #8FD14F;         /* Verde más oscuro para contraste */
-  
-  --rosa-principal: #FFB3D9;       /* Rosa más intenso */
-  --rosa-claro: #FFD4EC;           /* Rosa suave */
-  --rosa-oscuro: #FF8FCC;          /* Rosa fuerte */
-  
-  --crema-perrito: #FFDAB3;        /* Color del pelaje */
-  --marron-oscuro: #5C3A21;        /* Marrón del borde */
+  /* Colores principales - Verde Menta */
+  --verde-menta: #A8E6CF;
+  --verde-menta-claro: #C8F5E0;
+  --verde-menta-oscuro: #7ECDA3;
+  --verde-acento: #5CB85C;
   
   /* Colores complementarios */
   --blanco: #FFFFFF;
+  --gris-oscuro: #2c3e50;
   --gris-claro: #F5F5F5;
+  --gris-medio: #95a5a6;
   --sombra: rgba(0, 0, 0, 0.1);
+  --sombra-verde: rgba(126, 205, 163, 0.3);
 }
 
 /* ============================================
@@ -76,9 +24,18 @@ body {
    ============================================ */
 
 body {
-  background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-claro) 100%);
+  background: linear-gradient(135deg, var(--verde-menta-claro) 0%, var(--blanco) 100%);
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fondo global para toda la aplicación */
+.app-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--verde-menta-claro) 0%, var(--blanco) 100%);
+  background-attachment: fixed;
 }
 
 /* ============================================
@@ -86,13 +43,13 @@ body {
    ============================================ */
 
 h1, .display-4 {
-  color: var(--marron-oscuro) !important;
-  text-shadow: 2px 2px 4px rgba(255, 179, 217, 0.3);
+  color: var(--gris-oscuro) !important;
+  text-shadow: 2px 2px 4px rgba(168, 230, 207, 0.3);
   font-weight: bold;
 }
 
 h2, h3, h4, h5 {
-  color: var(--marron-oscuro) !important;
+  color: var(--gris-oscuro) !important;
 }
 
 /* ============================================
@@ -101,7 +58,7 @@ h2, h3, h4, h5 {
 
 .card {
   background-color: var(--blanco);
-  border: 3px solid var(--rosa-principal);
+  border: 3px solid var(--verde-menta);
   border-radius: 20px;
   box-shadow: 0 8px 16px var(--sombra);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -109,11 +66,12 @@ h2, h3, h4, h5 {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(255, 143, 204, 0.3);
+  box-shadow: 0 12px 24px var(--sombra-verde);
+  border-color: var(--verde-menta-oscuro);
 }
 
 .card-title {
-  color: var(--rosa-oscuro) !important;
+  color: var(--verde-acento) !important;
   font-weight: bold;
 }
 
@@ -126,7 +84,7 @@ h2, h3, h4, h5 {
 .card-img-top {
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
-  border-bottom: 3px solid var(--rosa-principal);
+  border-bottom: 3px solid var(--verde-menta);
 }
 
 /* ============================================
@@ -134,9 +92,9 @@ h2, h3, h4, h5 {
    ============================================ */
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--rosa-oscuro) 100%);
+  background: linear-gradient(135deg, var(--verde-menta) 0%, var(--verde-menta-oscuro) 100%);
   border: none;
-  color: var(--blanco);
+  color: var(--gris-oscuro);
   font-weight: bold;
   padding: 10px 25px;
   border-radius: 25px;
@@ -144,15 +102,16 @@ h2, h3, h4, h5 {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--rosa-oscuro) 0%, var(--rosa-principal) 100%);
+  background: linear-gradient(135deg, var(--verde-acento) 0%, var(--verde-menta-oscuro) 100%);
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(255, 143, 204, 0.4);
+  box-shadow: 0 5px 15px var(--sombra-verde);
+  color: var(--blanco);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-principal) 100%);
-  border: none;
-  color: var(--marron-oscuro);
+  background: var(--blanco);
+  border: 2px solid var(--verde-menta);
+  color: var(--gris-oscuro);
   font-weight: bold;
   padding: 10px 25px;
   border-radius: 25px;
@@ -160,7 +119,8 @@ h2, h3, h4, h5 {
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-oscuro) 100%);
+  background: var(--verde-menta-claro);
+  border-color: var(--verde-menta-oscuro);
   transform: scale(1.05);
 }
 
@@ -170,15 +130,15 @@ h2, h3, h4, h5 {
 
 .alert {
   background-color: var(--blanco);
-  border: 3px solid var(--verde-oscuro);
+  border: 3px solid var(--verde-menta);
   border-radius: 15px;
-  color: var(--marron-oscuro);
+  color: var(--gris-oscuro);
   box-shadow: 0 4px 8px var(--sombra);
 }
 
 .alert-info {
-  background: linear-gradient(135deg, var(--verde-claro) 0%, var(--blanco) 100%);
-  border-color: var(--verde-oscuro);
+  background: linear-gradient(135deg, var(--verde-menta-claro) 0%, var(--blanco) 100%);
+  border-color: var(--verde-menta-oscuro);
 }
 
 /* ============================================
@@ -186,17 +146,18 @@ h2, h3, h4, h5 {
    ============================================ */
 
 .img-fluid {
-  border: 5px solid var(--rosa-principal);
-  box-shadow: 0 8px 16px rgba(255, 143, 204, 0.3);
+  border: 5px solid var(--verde-menta);
+  box-shadow: 0 8px 16px var(--sombra-verde);
   transition: transform 0.3s ease;
 }
 
 .img-fluid:hover {
   transform: scale(1.05);
+  border-color: var(--verde-menta-oscuro);
 }
 
 .rounded-circle {
-  border: 5px solid var(--rosa-principal);
+  border: 5px solid var(--verde-menta);
   background-color: var(--blanco);
   padding: 5px;
 }
@@ -206,12 +167,13 @@ h2, h3, h4, h5 {
    ============================================ */
 
 .container, .text-center {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
   padding: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(92, 58, 33, 0.15);
+  box-shadow: 0 10px 30px var(--sombra);
+  border: 2px solid var(--verde-menta-claro);
 }
 
 /* ============================================
@@ -233,12 +195,12 @@ h2, h3, h4, h5 {
    ============================================ */
 
 .lead {
-  color: var(--marron-oscuro);
+  color: var(--gris-oscuro);
   font-size: 1.1rem;
 }
 
 .text-body-secondary {
-  color: var(--rosa-oscuro) !important;
+  color: var(--gris-medio) !important;
 }
 
 /* ============================================
@@ -248,7 +210,7 @@ h2, h3, h4, h5 {
 .paw-print::before {
   content: "🐾";
   margin-right: 10px;
-  color: var(--rosa-principal);
+  color: var(--verde-menta-oscuro);
 }
 
 /* ============================================
@@ -269,21 +231,22 @@ h2, h3, h4, h5 {
 }
 
 /* ============================================
-   NAVBAR (si tienes una)
+   NAVBAR
    ============================================ */
 
 .navbar {
-  background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--rosa-oscuro) 100%);
+  background: linear-gradient(135deg, var(--verde-menta) 0%, var(--verde-menta-oscuro) 100%);
   box-shadow: 0 4px 8px var(--sombra);
+  border-bottom: 3px solid var(--verde-acento);
 }
 
 .navbar-brand, .nav-link {
-  color: var(--blanco) !important;
+  color: var(--gris-oscuro) !important;
   font-weight: bold;
 }
 
 .nav-link:hover {
-  color: var(--verde-claro) !important;
+  color: var(--verde-acento) !important;
 }
 
 /* ============================================
@@ -291,11 +254,11 @@ h2, h3, h4, h5 {
    ============================================ */
 
 footer {
-  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-principal) 100%);
-  color: var(--marron-oscuro);
+  background: linear-gradient(135deg, var(--verde-menta) 0%, var(--verde-menta-oscuro) 100%);
+  color: var(--gris-oscuro);
   padding: 20px 0;
   margin-top: 50px;
-  border-top: 5px solid var(--rosa-principal);
+  border-top: 5px solid var(--verde-acento);
 }
 
 /* ============================================
@@ -309,5 +272,9 @@ footer {
   
   .container {
     padding: 15px;
+  }
+  
+  h1, .display-4 {
+    font-size: 2rem;
   }
 }

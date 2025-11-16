@@ -1,36 +1,82 @@
 import React from 'react';
 import { MessageCircle, Instagram, Facebook, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
-const Footer = () => {
+export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 text-gray-800 pt-12 pb-6">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer style={{
+      background: 'linear-gradient(135deg, #A8E6CF 0%, #7ECDA3 100%)',
+      color: '#2c3e50',
+      paddingTop: '3rem',
+      paddingBottom: '1.5rem',
+      borderTop: '5px solid #5CB85C'
+    }}>
+      <div className="container">
+        <div className="row mb-4">
           
           {/* Sección Sobre Nosotros */}
-          <div>
-            <h3 className="text-2xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+          <div className="col-md-4 mb-4">
+            <h3 style={{ color: '#2c3e50', fontWeight: 'bold', marginBottom: '1rem' }}>
               🐾 Peluquería Canina
             </h3>
-            <p className="text-gray-700 mb-4">
+            <p style={{ color: '#2c3e50', marginBottom: '1.5rem' }}>
               Cuidamos a tu mejor amigo con amor y profesionalismo. 
-              Más de 10 años de experiencia haciendo felices a las mascotas.
+              
             </p>
-            <div className="flex gap-4">
+            <div style={{ display: 'flex', gap: '1rem' }}>
               <a 
                 href="https://wa.me/56912345678" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                style={{
+                  backgroundColor: '#25D366',
+                  color: 'white',
+                  padding: '12px',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                  width: '50px',
+                  height: '50px'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                  e.currentTarget.style.backgroundColor = '#128C7E';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = '#25D366';
+                }}
                 aria-label="WhatsApp"
               >
                 <MessageCircle size={24} />
               </a>
               <a 
-                href="https://instagram.com/tupeluqueriacanina" 
+                href="https://instagram.com/exampleprofile" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                style={{
+                  background: 'linear-gradient(135deg, #833AB4 0%, #E1306C 100%)',
+                  color: 'white',
+                  padding: '12px',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                  width: '50px',
+                  height: '50px'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #5B51D8 0%, #C13584 100%)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #833AB4 0%, #E1306C 100%)';
+                }}
                 aria-label="Instagram"
               >
                 <Instagram size={24} />
@@ -39,7 +85,27 @@ const Footer = () => {
                 href="https://facebook.com/tupeluqueriacanina" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                style={{
+                  backgroundColor: '#1877F2',
+                  color: 'white',
+                  padding: '12px',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                  width: '50px',
+                  height: '50px'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                  e.currentTarget.style.backgroundColor = '#0d5dbf';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = '#1877F2';
+                }}
                 aria-label="Facebook"
               >
                 <Facebook size={24} />
@@ -48,50 +114,61 @@ const Footer = () => {
           </div>
 
           {/* Sección Contacto */}
-          <div>
-            <h4 className="text-xl font-bold text-purple-700 mb-4">Contacto</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-gray-700">
-                <MapPin size={20} className="text-purple-600 mt-1 flex-shrink-0" />
-                <span>Av. Principal 123, Santiago, Chile</span>
+          <div className="col-md-4 mb-4">
+            <h4 style={{ color: '#2c3e50', fontWeight: 'bold', marginBottom: '1rem' }}>
+              Contacto
+            </h4>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '0.75rem', color: '#2c3e50' }}>
+                <MapPin size={20} style={{ color: '#5CB85C', marginTop: '2px', flexShrink: 0 }} />
+                <span>Lima, Peru</span>
               </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <Phone size={20} className="text-purple-600 flex-shrink-0" />
-                <a href="tel:+56912345678" className="hover:text-purple-600 transition-colors">
-                  +569 1234 5678
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', color: '#2c3e50' }}>
+                <Phone size={20} style={{ color: '#5CB85C', flexShrink: 0 }} />
+                <a href="tel:+51973232677" style={{ color: '#2c3e50', textDecoration: 'none', transition: 'color 0.3s' }}
+                   onMouseEnter={(e) => e.currentTarget.style.color = '#5CB85C'}
+                   onMouseLeave={(e) => e.currentTarget.style.color = '#2c3e50'}>
+                  +51973232677
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <Mail size={20} className="text-purple-600 flex-shrink-0" />
-                <a href="mailto:info@peluqueriacanina.cl" className="hover:text-purple-600 transition-colors">
-                  info@peluqueriacanina.cl
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2c3e50' }}>
+                <Mail size={20} style={{ color: '#5CB85C', flexShrink: 0 }} />
+                <a href="mailto:info@peluqueriacanina.cl" style={{ color: '#2c3e50', textDecoration: 'none', transition: 'color 0.3s' }}
+                   onMouseEnter={(e) => e.currentTarget.style.color = '#5CB85C'}
+                   onMouseLeave={(e) => e.currentTarget.style.color = '#2c3e50'}>
+                  wuinche55@gmail.com
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Sección Horarios */}
-          <div>
-            <h4 className="text-xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+          <div className="col-md-4 mb-4">
+            <h4 style={{ color: '#2c3e50', fontWeight: 'bold', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Clock size={24} />
               Horarios
             </h4>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex justify-between">
-                <span className="font-semibold">Lunes - Viernes:</span>
+            <ul style={{ listStyle: 'none', padding: 0, color: '#2c3e50' }}>
+              <li style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <span style={{ fontWeight: 'bold' }}>Lunes - Viernes:</span>
                 <span>9:00 - 19:00</span>
               </li>
-              <li className="flex justify-between">
-                <span className="font-semibold">Sábado:</span>
+              <li style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <span style={{ fontWeight: 'bold' }}>Sábado:</span>
                 <span>10:00 - 14:00</span>
               </li>
-              <li className="flex justify-between">
-                <span className="font-semibold">Domingo:</span>
-                <span className="text-red-500">Cerrado</span>
+              <li style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                <span style={{ fontWeight: 'bold' }}>Domingo:</span>
+                <span style={{ color: '#e74c3c' }}>Cerrado</span>
               </li>
             </ul>
-            <div className="mt-4 bg-purple-200 p-3 rounded-lg">
-              <p className="text-sm font-semibold text-purple-800">
+            <div style={{
+              backgroundColor: '#C8F5E0',
+              padding: '0.75rem',
+              borderRadius: '10px',
+              border: '2px solid #7ECDA3'
+            }}>
+              <p style={{ fontSize: '0.9rem', fontWeight: 'bold', color: '#2c3e50', margin: 0 }}>
                 🎉 ¡Reserva tu cita ahora por WhatsApp!
               </p>
             </div>
@@ -99,13 +176,13 @@ const Footer = () => {
         </div>
 
         {/* Línea divisoria */}
-        <div className="border-t border-purple-300 pt-6">
-          <div className="text-center text-gray-600">
-            <p className="mb-2">
+        <div style={{ borderTop: '2px solid #7ECDA3', paddingTop: '1.5rem' }}>
+          <div className="text-center" style={{ color: '#2c3e50' }}>
+            <p style={{ marginBottom: '0.5rem' }}>
               © {new Date().getFullYear()} Peluquería Canina. Todos los derechos reservados.
             </p>
-            <p className="text-sm">
-              Hecho con 💜 y 🐾 para tu mejor amigo
+            <p style={{ fontSize: '0.9rem', margin: 0 }}>
+              Hecho con 💚 y 🐾 para tu mejor amigo
             </p>
           </div>
         </div>
@@ -113,5 +190,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-
