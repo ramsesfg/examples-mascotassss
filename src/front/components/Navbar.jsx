@@ -1,54 +1,102 @@
-import { Link } from "react-router-dom";
 import React from "react";
-import fonImageUrl from "../assets/img/Fondo-logo.png";
+import { Link, useNavigate } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Navbar = () => {
+	const { store, dispatch } = useGlobalReducer();
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		dispatch({ type: 'logout' });
+		navigate('/');
+	};
 
 	return (
-		<nav className="navbar navbar-light sticky-top" style={{
-			background: 'rgba(178, 226, 208, 0.66)', // Verde menta con 85% opacidad
-			backdropFilter: 'blur(10px)', // Efecto glassmorphism
-			WebkitBackdropFilter: 'blur(10px)', // Para Safari
-			boxShadow: '0 2px 15px rgba(0,0,0,0.1)',
-			borderBottom: '2px solid rgba(92, 184, 92, 0.3)'
-		}}>
+		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<div className="container-fluid">
-
-
-
-
-
-				<Link to="/">
-					<img src={fonImageUrl} alt="Logo" style={{ height: "60px" }} />
+				<Link className="navbar-brand" to="/">
+					🐾 Peluquería Canina ArisVet
 				</Link>
-				<div className="ml-auto">
-					<Link to="/welcome" style={{
-						color: '#2c3e50',
-						fontSize: '24px',
-						transition: 'all 0.3s ease'
-					}}
-						onMouseEnter={(e) => {
-							e.target.style.color = '#5CB85C';
-							e.target.style.transform = 'scale(1.1)';
-						}}
-						onMouseLeave={(e) => {
-							e.target.style.color = '#2c3e50';
-							e.target.style.transform = 'scale(1)';
-						}}
-					>
-						<div className="btn-group dropstart">
-							<a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						     <i className="fa-regular fa-user"></i>
-							
-							</a>
-		
-							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">Action</a></li>
-								<li><a className="dropdown-item" href="#">Another action</a></li>
-								<li><a className="dropdown-item" href="#">Something else here</a></li>
-							</ul>
-						</div>
-					</Link>
+				
+				<button 
+					className="navbar-toggler" 
+					type="button" 
+					data-bs-toggle="collapse" 
+					data-bs-target="#navbarNav"
+				>
+					<span className="navbar-toggler-icon"></span>
+				</button>
+				
+				<div className="collapse navbar-collapse" id="navbarNav">
+					<ul className="navbar-nav ms-auto">
+						<li className="nav-item">
+							<Link className="nav-link" to="/">
+								Inicio
+							</Link>
+						</li>
+
+						{!store.token ? (
+							// Menú para usuarios no logueados
+							<>
+								<li className="nav-item">
+									<Link className="nav-link" to="/login">
+										Iniciar Sesión
+									</Link>
+								</li>
+								<li className="nav-item">
+									<Link className="nav-link btn btn-primary text-white ms-2" to="/registro">
+										Registrarse
+									</Link>
+								</li>
+							</>
+						) : (
+							// Menú para usuarios logueados
+							<>
+								<li className="nav-item">
+									<Link className="nav-link" to="/dashboard">
+										Dashboard
+									</Link>
+								</li>
+								<li className="nav-item">
+									<Link className="nav-link" to="/mascotas">
+										Mis Mascotas
+									</Link>
+								</li>
+								<li className="nav-item">
+									<Link className="nav-link" to="/citas">
+										Mis Citas
+									</Link>
+								</li>
+								<li className="nav-item dropdown">
+									<a 
+										className="nav-link dropdown-toggle" 
+										href="#" 
+										id="navbarDropdown" 
+										role="button" 
+										data-bs-toggle="dropdown"
+									>
+										👤 {store.user?.nombre}
+									</a>
+									<ul className="dropdown-menu">
+										<li>
+											<Link className="dropdown-item" to="/perfil">
+												Mi Perfil
+											</Link>
+										</li>
+										<li><hr className="dropdown-divider" /></li>
+										<li>
+											<button 
+												className="dropdown-item text-danger" 
+												onClick={handleLogout}
+											>
+												Cerrar Sesión
+											</button>
+										</li>
+									</ul>
+								</li>
+							</>
+						)}
+					</ul>
 				</div>
 			</div>
 		</nav>

@@ -50,66 +50,10 @@ export const Footer = () => {
                 }}
                 aria-label="WhatsApp"
               >
-                <MessageCircle size={24} />
+                <i class="fa-brands fa-whatsapp"></i>
+                
               </a>
-              <a 
-                href="https://instagram.com/exampleprofile" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{
-                  background: 'linear-gradient(135deg, #833AB4 0%, #E1306C 100%)',
-                  color: 'white',
-                  padding: '12px',
-                  borderRadius: '50%',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease',
-                  width: '50px',
-                  height: '50px'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.1)';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #5B51D8 0%, #C13584 100%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #833AB4 0%, #E1306C 100%)';
-                }}
-                aria-label="Instagram"
-              >
-                <Instagram size={24} />
-              </a>
-              <a 
-                href="https://facebook.com/tupeluqueriacanina" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{
-                  backgroundColor: '#1877F2',
-                  color: 'white',
-                  padding: '12px',
-                  borderRadius: '50%',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease',
-                  width: '50px',
-                  height: '50px'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.1)';
-                  e.currentTarget.style.backgroundColor = '#0d5dbf';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.backgroundColor = '#1877F2';
-                }}
-                aria-label="Facebook"
-              >
-                <Facebook size={24} />
-              </a>
+             
             </div>
           </div>
 
