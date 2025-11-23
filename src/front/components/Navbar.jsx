@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import nuevoImageUrl from "../assets/img/logo_512.png";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Navbar = () => {
@@ -12,9 +13,10 @@ export const Navbar = () => {
 	};
 
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
+		<nav className="navbar navbar-expand-lg navbar-glass bg-light  sticky-top">
 			<div className="container-fluid">
 				<Link className="navbar-brand" to="/">
+				 <img src={nuevoImageUrl} height={80}  alt="Fondo" />
 					🐾 Peluquería Canina ArisVet
 				</Link>
 				

@@ -57,7 +57,7 @@ def registro():
         db.session.commit()
 
         return jsonify({
-            'mensaje': 'Usuario registrado exitosamente',
+            'mensaje': 'User registrado exitosamente',
             'usuario': nuevo_usuario.serialize()
         }), 201
 
@@ -81,7 +81,7 @@ def login():
             return jsonify({'error': 'Credenciales inválidas'}), 401
 
         if not usuario.is_active:
-            return jsonify({'error': 'Usuario inactivo'}), 401
+            return jsonify({'error': 'User inactivo'}), 401
 
         access_token = create_access_token(identity=usuario.id)
 
@@ -106,7 +106,7 @@ def obtener_perfil():
         usuario = User.query.get(usuario_id)
 
         if not usuario:
-            return jsonify({'error': 'Usuario no encontrado'}), 404
+            return jsonify({'error': 'User no encontrado'}), 404
 
         return jsonify(usuario.serialize()), 200
 
@@ -123,7 +123,7 @@ def actualizar_perfil():
         usuario = User.query.get(usuario_id)
 
         if not usuario:
-            return jsonify({'error': 'Usuario no encontrado'}), 404
+            return jsonify({'error': 'User no encontrado'}), 404
 
         data = request.get_json()
 

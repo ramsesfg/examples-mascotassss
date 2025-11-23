@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
-import { crearCita, actualizarCita, obtenerMascotas } from '../services/api';
+import { crearCita, actualizarCita, obtenerMascotas } from '../ServiceApi.js';
 
 export const CitaForm = () => {
   const navigate = useNavigate();

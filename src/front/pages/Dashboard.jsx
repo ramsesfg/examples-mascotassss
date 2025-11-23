@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
-import { obtenerMascotas, obtenerCitas } from '../services/api';
+import { obtenerMascotas, obtenerCitas } from '../ServiceApi.js';
 
 export const Dashboard = () => {
     const navigate = useNavigate();

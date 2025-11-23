@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
-import { login } from '../services/api';
+import { login } from '../ServiceApi.js';
 
 export const Login = () => {
   const navigate = useNavigate();

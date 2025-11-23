@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
-import { actualizarPerfil, eliminarPerfil } from '../services/api';
+import { actualizarPerfil, eliminarPerfil } from '../ServiceApi.js';
 
 export const Perfil = () => {
   const navigate = useNavigate();

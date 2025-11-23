@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
-import { obtenerCitas, eliminarCita } from '../services/api';
+import { obtenerCitas, eliminarCita } from '../ServiceApi.js';
 
 export const CitasList = () => {
   const navigate = useNavigate();

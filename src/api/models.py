@@ -7,7 +7,7 @@ db = SQLAlchemy()
 
 
 class User(db.Model):
-    __tablename__ = 'user'
+    __tablename__ = 'usuario'
 
     id: Mapped[int] = mapped_column(primary_key=True)
     email: Mapped[str] = mapped_column(
@@ -51,7 +51,7 @@ class Mascota(db.Model):
     peso: Mapped[float] = mapped_column(Float, nullable=True)
     observaciones: Mapped[str] = mapped_column(Text, nullable=True)
     usuario_id: Mapped[int] = mapped_column(
-        ForeignKey('user.id'), nullable=False)
+        ForeignKey('usuario.id'), nullable=False)
 
     # Relaciones
     dueño: Mapped["User"] = relationship(back_populates="mascotas")
@@ -81,7 +81,7 @@ class Cita(db.Model):
     notas: Mapped[str] = mapped_column(Text, nullable=True)
     precio: Mapped[float] = mapped_column(Float, nullable=True)
     usuario_id: Mapped[int] = mapped_column(
-        ForeignKey('user.id'), nullable=False)
+        ForeignKey('usuario.id'), nullable=False)
     mascota_id: Mapped[int] = mapped_column(
         ForeignKey('mascota.id'), nullable=False)
     fecha_creacion: Mapped[datetime] = mapped_column(

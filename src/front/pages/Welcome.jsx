@@ -1,6 +1,6 @@
 import React from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
-import fonImageUrl from "../assets/img/Fondo-logo.png";
+
 import "../index.css";
 
 export const Welcome = () => {

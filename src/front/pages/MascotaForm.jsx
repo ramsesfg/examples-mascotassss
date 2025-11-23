@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
-import { crearMascota, actualizarMascota } from '../services/api';
+import { crearMascota, actualizarMascota } from '../ServiceApi.js';
 
 export const MascotaForm = () => {
   const navigate = useNavigate();
